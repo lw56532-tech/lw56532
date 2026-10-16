@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>電阻色碼與電容碼｜闖關練習</title>
+<style>
+:root{--bg:#e7f1ea;--ink:#12261c;--mut:#4f6a5b;--card:#fff;--line:#c4d6ca;--acc:#c98a12;--acc2:#0f7a55;--bad:#c2392f;--hd:#0f4a37;--hdink:#f4ffe9;--chip:#eef5f0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b2a21;--ink:#eaf6ec;--mut:#9dbfae;--card:#12382c;--line:#25574a;--acc:#f2b632;--acc2:#4fd39a;--bad:#ff7a6e;--hd:#07221a;--hdink:#f4ffe9;--chip:#0f3025}}
+:root[data-theme="dark"]{--bg:#0b2a21;--ink:#eaf6ec;--mut:#9dbfae;--card:#12382c;--line:#25574a;--acc:#f2b632;--acc2:#4fd39a;--bad:#ff7a6e;--hd:#07221a;--hdink:#f4ffe9;--chip:#0f3025}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.6;min-height:100%}
+header{background:var(--hd);color:var(--hdink);padding:16px 16px 14px}
+.wrap{max-width:760px;margin:auto;padding:0 14px}
+header .wrap{padding:0}
+h1{margin:0;font-size:clamp(20px,5vw,28px);letter-spacing:.02em}
+.sub{margin:2px 0 12px;color:#b8dcc8;font-size:14px}
+.stats{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.lv{font-weight:800;color:#f2b632;white-space:nowrap}
+.xp{flex:1;min-width:120px;height:12px;background:#ffffff26;border-radius:8px;overflow:hidden}
+.xp i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f2b632,#ffe28a);transition:width .5s}
+.pill{background:#ffffff1c;border-radius:20px;padding:2px 11px;font-size:14px;white-space:nowrap}
+.who{display:flex;gap:8px;margin-top:10px}
+.who input{flex:1;min-width:0;background:#ffffff14;border:1px solid #ffffff33;color:inherit;border-radius:8px;padding:6px 10px;font:inherit;font-size:15px}
+.who input::placeholder{color:#a5cbb7}
+nav{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+nav button{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:9px 4px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;line-height:1.3}
+nav button b{display:block;font-size:20px}
+nav button[aria-pressed=true]{border-color:var(--acc);box-shadow:0 0 0 3px #f2b63240}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.card{background:var(--card);border-radius:18px;padding:16px;border:1px solid var(--line);margin-bottom:14px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--mut);font-weight:700;margin-bottom:6px}
+.prog{height:8px;background:var(--chip);border-radius:6px;overflow:hidden;margin-bottom:12px}
+.prog i{display:block;height:100%;background:var(--acc2);transition:width .3s}
+.ask{font-size:18px;font-weight:800;margin:4px 0 8px;text-align:center}
+.part{display:flex;justify-content:center;padding:6px 0 12px}
+.part svg{width:100%;max-width:420px;height:auto}
+.row{display:flex;gap:8px;justify-content:center;align-items:stretch;margin:8px 0}
+.row input{width:150px;font-size:22px;font-weight:700;text-align:center;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:8px}
+.row select{font-size:20px;font-weight:700;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:0 8px}
+.lab{text-align:center;font-size:14px;color:var(--mut);font-weight:700;margin:10px 0 4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chips button{border:2px solid var(--line);background:var(--chip);color:var(--ink);border-radius:20px;padding:6px 14px;font:inherit;font-weight:700;font-size:16px;cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#1d1400}
+.ok{border-color:var(--acc2)!important}.no{border-color:var(--bad)!important}
+.pal{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:6px}
+.pal button{height:46px;border-radius:10px;border:2px solid #0004;font:inherit;font-weight:800;font-size:15px;cursor:pointer}
+.act{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.go{background:var(--acc);color:#1d1400;border:0;border-radius:14px;padding:12px 30px;font:inherit;font-weight:800;font-size:18px;cursor:pointer;min-width:160px}
+.go.next{background:var(--acc2);color:#04180f}
+.fb{margin-top:14px;border-radius:12px;padding:12px 14px;display:none}
+.fb.show{display:block}.fb.good{background:#16a06a22;border:1px solid var(--acc2)}.fb.bad{background:#e0504522;border:1px solid var(--bad)}
+.fb h3{margin:0 0 4px;font-size:18px}
+.fb p{margin:4px 0;font-size:15px}
+.chip{display:inline-block;min-width:26px;text-align:center;border-radius:6px;padding:0 7px;font-weight:800;border:1px solid #0004;margin:0 2px}
+.res{text-align:center}.res .big{font-size:64px;line-height:1.1}.res h2{margin:6px 0}
+.res table{margin:12px auto;border-collapse:collapse}.res td{padding:4px 14px;border-bottom:1px solid var(--line);text-align:left}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:20px}
+summary{cursor:pointer;font-weight:800}
+.leg{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;margin:10px 0}
+.leg span{font-size:14px}
+.tools{display:flex;gap:8px;justify-content:flex-end;margin:-4px 0 8px}
+.tools button{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font:inherit;font-size:14px;cursor:pointer}
+.pop{position:fixed;left:50%;top:40%;font-size:26px;pointer-events:none;animation:pop .9s ease-out forwards;z-index:9}
+@keyframes pop{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
+@media(prefers-reduced-motion:reduce){.pop{display:none}.xp i,.prog i{transition:none}}
+@media(max-width:430px){.row input{width:120px}.pal{grid-template-columns:repeat(4,1fr)}}
+@media print{header .who~*,nav,.act,.tools,details,.fb:not(.show){display:none}header{background:none;color:#000}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>⚡ 色碼闖關：電阻與電容</h1>
+<p class="sub">答對累積經驗值、連續答對有加成，一輪 10 題</p>
+<div class="stats"><span class="lv" id="lv">Lv.1</span><div class="xp"><i id="xpbar"></i></div><span class="pill">🔥 連對 <b id="streak">0</b></span><span class="pill">🏅 最高 <b id="best">0</b></span><span class="pill">⏱ <b id="clock">00:00</b></span></div>
+<div class="who"><input id="student" placeholder="姓名" autocomplete="name" aria-label="姓名"><input id="seat" placeholder="座號" inputmode="numeric" aria-label="座號" style="max-width:100px"></div>
+</div></header>
+<main class="wrap">
+<nav id="tabs" aria-label="練習模式">
+<button data-m="r4" aria-pressed="true"><b>🟤</b>四環電阻</button>
+<button data-m="r5" aria-pressed="false"><b>🔵</b>五環電阻</button>
+<button data-m="cap" aria-pressed="false"><b>🔶</b>電容碼</button>
+<button data-m="rev" aria-pressed="false"><b>🎨</b>反向配色</button>
+</nav>
+<div class="tools"><button id="rst">↺ 重置進度</button><button id="snd" aria-pressed="true">🔊 音效開</button></div>
+<section class="card" id="card" aria-live="polite"></section>
+<details open><summary>📚 色碼速查表</summary>
+<div class="leg" id="leg"></div>
+<p style="font-size:14px;margin:6px 0">電阻：前面的環是有效數字，倒數第二環是倍率（金 ×0.1、銀 ×0.01），最後一環是誤差。<br>電容：三位數前兩位為有效數字，第三位為 10 的次方，單位 pF；J ±5%、K ±10%、M ±20%。<br>1 μF = 1,000 nF = 1,000,000 pF。</p></details>
+</main>
+<script>
+'use strict';
+const COL={黑:'#151515',棕:'#7a4a28',紅:'#e03a3a',橙:'#f08a1c',黃:'#f3d52f',綠:'#2a9d5c',藍:'#2f6fc2',紫:'#8a58b0',灰:'#8a94a1',白:'#ffffff',金:'#d4ab26',銀:'#bfc6d0'};
+const DIG=['黑','棕','紅','橙','黃','綠','藍','紫','灰','白'];
+const LIGHT=['黃','白','金','銀','橙'];
+const TOLC=[['棕',1],['紅',2],['綠',.5],['藍',.25],['紫',.1],['灰',.05],['金',5],['銀',10]];
+const RT=[.05,.1,.25,.5,1,2,5,10],CT=[5,10,20];
+const TITLES=['新手學徒','電路學徒','焊接高手','電子技師','電路工程師','色碼大師'];
+const $=s=>document.querySelector(s);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const fmt=x=>Number(x.toPrecision(12)).toLocaleString('en-US',{maximumFractionDigits:8});
+let revN=4,mode='r4',q,round,xp=0,best=0,streak=0,sound=true,t0=0,timer,done=false,tol=null,picks=[],slot=0;
+try{const s=JSON.parse(localStorage.getItem('rcq')||'{}');xp=s.xp||0;best=s.best||0;$('#student').value=s.name||'';$('#seat').value=s.seat||''}catch(e){}
+function save(){try{localStorage.setItem('rcq',JSON.stringify({xp,best,name:$('#student').value,seat:$('#seat').value}))}catch(e){}}
+function beep(f,d=.12,t=0){if(!sound)return;try{const a=beep.a||(beep.a=new AudioContext()),o=a.createOscillator(),g=a.createGain();o.frequency.value=f;g.gain.value=.07;o.connect(g);g.connect(a.destination);o.start(a.currentTime+t);o.stop(a.currentTime+t+d)}catch(e){}}
+function burst(){const em=['🎉','⭐','✨','⚡'];for(let i=0;i<12;i++){const s=document.createElement('span');s.className='pop';s.textContent=pick(em);s.style.setProperty('--dx',(ri(-160,160))+'px');s.style.setProperty('--dy',(ri(-190,-40))+'px');s.style.setProperty('--r',ri(-90,90)+'deg');document.body.appendChild(s);setTimeout(()=>s.remove(),950)}}
+function chip(c){return `<span class="chip" style="background:${COL[c]};color:${LIGHT.includes(c)?'#222':'#fff'}">${c}</span>`}
+function ohm(v){return v>=1e9?fmt(v/1e9)+' GΩ':v>=1e6?fmt(v/1e6)+' MΩ':v>=1e3?fmt(v/1e3)+' kΩ':fmt(v)+' Ω'}
+function capAll(p){return `${fmt(p)} pF = ${fmt(p/1e3)} nF = ${fmt(p/1e6)} μF`}
+function parse(s){s=s.trim().replace(/,/g,'');return /^[-+]?(\d+\.?\d*|\.\d+)(e[-+]?\d+)?$/i.test(s)?Number(s):NaN}
+function parseU(s){s=s.trim().replace(/[ΩωFf]$/,'').trim();const m=s.match(/^(.*?)([kKmMgGpPnNuUμ])$/);if(m){const n=parse(m[1]),f={k:1e3,m:1e6,g:1e9,p:1,n:1e3,u:1e6,'μ':1e6}[m[2].toLowerCase()];return Number.isFinite(n)?n*f:NaN}const n=parse(s);return Number.isFinite(n)?n*Number($('#unit').value):NaN}
+function near(a,b){return Number.isFinite(a)&&Math.abs(a-b)<=Math.max(1e-10,Math.abs(b)*1e-7)}
+function stats(){const lv=Math.floor(xp/100)+1;$('#lv').textContent=`Lv.${lv} ${TITLES[Math.min(lv-1,5)]}`;$('#xpbar').style.width=(xp%100)+'%';$('#streak').textContent=streak;$('#best').textContent=best}
+function tick(){const s=Math.floor((Date.now()-t0)/1000);$('#clock').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function newRound(){round={n:0,ok:0,pts:0};t0=Date.now();clearInterval(timer);timer=setInterval(tick,1000);tick();nextQ()}
+function revPick(){clearInterval(timer);$('#clock').textContent='00:00';$('#card').innerHTML='<p class="ask">反向配色：先選電阻類型</p><p class="lab" style="margin-top:0">看到阻值，自己塗出色環，一輪 10 題</p><div class="act"><button class="go" data-n="4">🟤 四環電阻</button><button class="go" data-n="5">🔵 五環電阻</button></div>';$('#card').querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>{revN=Number(b.dataset.n);newRound()})}
+function nextQ(){if(round.n>=10)return summary();round.n++;done=false;tol=null;picks=[];slot=0;gen();draw()}
+function gen(){
+  if(mode==='cap'){const d=ri(10,99),e=ri(0,5),L=pick(['J','K','M']);q={kind:'c',code:`${d}${e}${L}`,d:[Math.floor(d/10),d%10],e,value:d*10**e,tol:{J:5,K:10,M:20}[L]};return}
+  const nd=mode==='r4'?2:mode==='r5'?3:revN-2,d=[ri(1,9)];while(d.length<nd)d.push(ri(0,9));
+  const e=ri(-1,nd===2?6:5),t=pick(TOLC),n=d.reduce((a,x)=>a*10+x,0);
+  q={kind:mode==='rev'?'v':'r',d,e,tol:t[1],value:n*10**e,colors:[...d.map(x=>DIG[x]),e===-1?'金':DIG[e],t[0]],n}
+}
+function resSVG(cols,sel){
+  const n=cols.length,step=n===4?26:21,x0=n===4?96:84;
+  let b=cols.map((c,i)=>{const x=i<n-1?x0+i*step:216;const f=c?COL[c]:'none';
+    return `<rect data-i="${i}" x="${x}" y="22" width="13" height="56" fill="${f}" stroke="${sel===i?'#f2b632':c?'#0003':'#8a8'}" stroke-width="${sel===i?3:1}" ${c?'':'stroke-dasharray="4 3"'} style="cursor:pointer"/>`}).join('');
+  return `<svg viewBox="0 0 300 100" role="img" aria-label="電阻"><line x1="4" y1="50" x2="296" y2="50" stroke="#9aa3ad" stroke-width="5"/><rect x="62" y="20" width="176" height="60" rx="26" fill="#e6cd96" stroke="#b79b5c"/>${b}</svg>`}
+function capSVG(code){return `<svg viewBox="0 0 300 150" role="img" aria-label="電容 ${code}"><path d="M120 108 L116 146 M180 108 L184 146" stroke="#9aa3ad" stroke-width="5" fill="none"/><circle cx="150" cy="62" r="52" fill="#d9822b" stroke="#a45a14" stroke-width="2"/><ellipse cx="132" cy="40" rx="18" ry="9" fill="#fff" opacity=".25"/><text x="150" y="76" text-anchor="middle" font-size="40" font-weight="800" font-family="Georgia,serif" fill="#2a1604">${code}</text></svg>`}
+function draw(){
+  const c=$('#card'),head=`<div class="top"><span>第 ${round.n} / 10 題</span><span>本輪得分 ${round.pts}</span></div><div class="prog"><i style="width:${(round.n-1)*10}%"></i></div>`;
+  let body='';
+  if(q.kind==='c')body=`<p class="ask">這顆電容是多少？</p><div class="part">${capSVG(q.code)}</div><div class="row"><input id="ans" inputmode="decimal" placeholder="例：100n" aria-label="電容數值"><select id="unit" aria-label="單位"><option value="1">pF</option><option value="1e3">nF</option><option value="1e6">μF</option></select></div><p class="lab">誤差（字母代表）</p><div class="chips" id="tc">${CT.map(t=>`<button data-t="${t}" aria-pressed="false">±${t}%</button>`).join('')}</div>`;
+  else if(q.kind==='r')body=`<p class="ask">這顆電阻是多少？</p><div class="part">${resSVG(q.colors)}</div><div class="row"><input id="ans" inputmode="decimal" placeholder="例：330k" aria-label="電阻數值"><select id="unit" aria-label="單位"><option value="1">Ω</option><option value="1e3">kΩ</option><option value="1e6">MΩ</option><option value="1e9">GΩ</option></select></div><p class="lab">誤差</p><div class="chips" id="tc">${RT.map(t=>`<button data-t="${t}" aria-pressed="false">±${t}%</button>`).join('')}</div>`;
+  else body=`<p class="ask">請塗出：${ohm(q.value)} ±${q.tol}%</p><p class="lab" style="margin-top:0">${q.colors.length} 環電阻・點色塊依序填色，也可點電阻上的環重選</p><div class="part" id="slots">${resSVG(new Array(q.colors.length).fill(''),0)}</div><div class="pal" id="pal">${Object.keys(COL).map(k=>`<button data-c="${k}" style="background:${COL[k]};color:${LIGHT.includes(k)?'#222':'#fff'}">${k}</button>`).join('')}</div>`;
+  c.innerHTML=head+body+`<div class="act"><button class="go" id="go">檢查答案</button></div><div class="fb" id="fb"></div>`;
+  $('#go').onclick=act;
+  $('#tc')&&$('#tc').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||done)return;tol=Number(b.dataset.t);[...$('#tc').children].forEach(x=>x.setAttribute('aria-pressed',x===b))});
+  if(q.kind==='v'){$('#pal').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||done)return;picks[slot]=b.dataset.c;slot=Math.min(slot+1,q.colors.length-1);redraw()});
+    $('#slots').addEventListener('click',e=>{const r=e.target.closest('rect');if(r&&!done){slot=Number(r.dataset.i);redraw()}})}
+  const a=$('#ans');if(a&&!/Mobi|Android/i.test(navigator.userAgent))a.focus();
+}
+function redraw(){const cols=q.colors.map((_,i)=>picks[i]||'');$('#slots').innerHTML=resSVG(cols,done?-1:slot)}
+function explain(){
+  if(q.kind==='c')return `<p>${q.code.slice(0,2)} × 10<sup>${q.code[2]}</sup> pF，字母 ${q.code[3]} → ±${q.tol}%</p><p>= ${capAll(q.value)}</p>`;
+  const nd=q.d.length,m=q.e===-1?'×0.1':q.e===-2?'×0.01':`×10<sup>${q.e}</sup>`;
+  return `<p>有效數字：${q.colors.slice(0,nd).map(chip).join('')} → ${q.d.join('')}</p><p>倍率：${chip(q.colors[nd])} → ${m}</p><p>誤差：${chip(q.colors[nd+1])} → ±${q.tol}%</p><p>${q.n??''}${q.n!==undefined?' '+m+' = ':''}<b>${q.kind==='c'?'':ohm(q.value)}</b>（${fmt(q.value)} Ω）</p>`}
+function act(){if(done){nextQ();return}
+  let okV,okT=true,msg;
+  if(q.kind==='v'){if(picks.filter(Boolean).length<q.colors.length){$('#go').textContent='還有色環沒填喔';setTimeout(()=>{if(!done)$('#go').textContent='檢查答案'},1200);return}
+    okV=picks.every((c,i)=>c===q.colors[i])}
+  else{const v=parseU($('#ans').value);if(!Number.isFinite(v)||tol===null){$('#go').textContent=!Number.isFinite(v)?'請輸入數字，例如 330k':'還沒選誤差喔';setTimeout(()=>{if(!done)$('#go').textContent='檢查答案'},1600);return}
+    okV=near(v,q.value);okT=tol===q.tol;
+    $('#ans').classList.add(okV?'ok':'no');$('#tc').querySelectorAll('button').forEach(b=>{if(Number(b.dataset.t)===q.tol)b.style.outline='3px solid #4fd39a'})}
+  done=true;const full=okV&&okT;
+  let gain=0;if(full){streak++;best=Math.max(best,streak);gain=10+Math.min(streak-1,10)*2;round.ok++;beep(660);beep(880,.15,.1);burst()}else{if(okV||okT)gain=3;streak=0;beep(220,.25)}
+  xp+=gain;round.pts+=gain;save();stats();
+  if(q.kind==='v')redraw();
+  const fb=$('#fb');fb.className='fb show '+(full?'good':'bad');
+  fb.innerHTML=`<h3>${full?'🎉 答對了！ +'+gain+' XP'+(streak>=3?`　🔥 ${streak} 連對`:''):(okV||okT?'差一點！ +'+gain+' XP':'再試試看 😅')}</h3>${!full&&q.kind!=='v'?`<p>${okV?'數值正確':'數值不對'}、${okT?'誤差正確':'誤差不對'}</p>`:''}${q.kind==='v'&&!full?`<p>正確配色：${q.colors.map(chip).join('')}</p>`:explain()}`;
+  $('#go').textContent=round.n>=10?'看成績':'下一題';$('#go').classList.add('next');$('#go').focus();
+}
+function summary(){
+  clearInterval(timer);const s=Math.floor((Date.now()-t0)/1000),ok=round.ok;
+  const r=ok===10?['🏆','色碼大師！全部答對']:ok>=8?['🥇','電子技師，很穩']:ok>=6?['🥈','焊接高手，再練一下']:['🔧','繼續加油，多練幾輪會更熟'];
+  const nm=$('#student').value||'同學',seat=$('#seat').value;
+  $('#card').innerHTML=`<div class="res"><div class="big">${r[0]}</div><h2>${r[1]}</h2><table><tr><td>學生</td><td>${nm.replace(/[<>&]/g,'')}${seat?'（座號 '+seat.replace(/[<>&]/g,'')+'）':''}</td></tr><tr><td>模式</td><td>${{r4:'四環電阻',r5:'五環電阻',cap:'電容碼',rev:'反向配色（'+revN+' 環）'}[mode]}</td></tr><tr><td>答對</td><td>${ok} / 10 題</td></tr><tr><td>本輪經驗值</td><td>+${round.pts} XP</td></tr><tr><td>用時</td><td>${Math.floor(s/60)} 分 ${s%60} 秒</td></tr></table><div class="act"><button class="go" id="again">再玩一輪</button><button class="go next" id="prt">🖨 列印成績</button></div></div>`;
+  $('#again').onclick=newRound;$('#prt').onclick=()=>print();
+}
+$('#tabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;mode=b.dataset.m;[...$('#tabs').children].forEach(x=>x.setAttribute('aria-pressed',x===b));streak=0;stats();mode==='rev'?revPick():newRound()});
+$('#rst').onclick=()=>{if(!confirm('要清除經驗值、最高連對、姓名和座號，從 Lv.1 重新開始嗎？'))return;xp=0;best=0;streak=0;$('#student').value='';$('#seat').value='';save();stats();mode==='rev'?revPick():newRound()};
+$('#snd').onclick=function(){sound=!sound;this.textContent=sound?'🔊 音效開':'🔇 音效關';this.setAttribute('aria-pressed',sound)};
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&$('#go')&&!e.isComposing&&document.activeElement.tagName!=='BUTTON'){e.preventDefault();act()}});
+['#student','#seat'].forEach(s=>$(s).addEventListener('change',save));
+$('#leg').innerHTML=DIG.map((c,i)=>`<span>${chip(c)} ${i}</span>`).join('')+`<span>${chip('金')} ×0.1／±5%</span><span>${chip('銀')} ×0.01／±10%</span>`+TOLC.filter(t=>t[0]!=='金'&&t[0]!=='銀').map(t=>`<span>${chip(t[0])} ±${t[1]}%</span>`).join('');
+stats();newRound();
+</script>
+</body>
+</html>

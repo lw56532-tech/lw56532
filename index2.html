@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>泰山高中｜學生互動練習平台</title>
+<style>
+:root{
+  --bg:#f4f7fb; --card:#fff; --text:#172033; --muted:#667085; --line:#dfe7f0;
+  --blue:#1f5fa8; --blue2:#2d7fc2; --orange:#d97706; --green:#16835a;
+  --shadow:0 12px 32px rgba(35,55,80,.10);
+  font-family:"Microsoft JhengHei","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);background:radial-gradient(circle at 10% 0%,#eaf4ff 0,transparent 32%),linear-gradient(180deg,#f8fbff 0%,var(--bg) 100%);min-height:100vh}
+header{background:linear-gradient(120deg,#174d83,#2478a8);color:#fff;padding:42px 20px 34px;box-shadow:0 4px 18px rgba(18,54,88,.16)}
+.header-inner{max-width:1180px;margin:auto}
+.school{font-size:15px;opacity:.9;font-weight:700;letter-spacing:.06em}
+h1{margin:8px 0 10px;font-size:clamp(28px,5vw,44px);line-height:1.2}
+header p{margin:0;color:#e6f3ff;font-size:clamp(15px,2.2vw,18px);line-height:1.7}
+main{max-width:1180px;margin:auto;padding:30px 20px 54px}
+.intro{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);margin-bottom:22px;line-height:1.8;color:#43506a}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:330px}
+.icon{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:32px;margin-bottom:18px}
+.quiz .icon{background:#e7f1ff}.resistor .icon{background:#fff0dc}.game .icon{background:#e7f7ef}.hackmd .icon{background:#efe9ff}
+.card h2{margin:0 0 10px;font-size:23px}
+.card p{margin:0 0 16px;color:var(--muted);line-height:1.75}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.tag{padding:6px 10px;border-radius:999px;background:#f3f6fa;border:1px solid #e5ebf2;color:#536079;font-size:13px;font-weight:700}
+.btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;color:white;text-decoration:none;font-weight:800;font-size:16px;transition:transform .08s ease,filter .15s ease}
+.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.quiz .btn{background:linear-gradient(180deg,var(--blue2),var(--blue))}
+.resistor .btn{background:linear-gradient(180deg,#e58a1e,var(--orange))}
+.game .btn{background:linear-gradient(180deg,#20a46f,var(--green))}.hackmd .btn{background:linear-gradient(180deg,#7557c9,#5a3ba7)}
+.notice{margin-top:22px;padding:15px 18px;border-radius:14px;background:#eef8f4;border:1px solid #cfeade;color:#315e4c;line-height:1.7}
+footer{text-align:center;color:#7b8799;padding:0 20px 30px;font-size:13px}
+@media(max-width:980px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.game{grid-column:auto}.card{min-height:0}}
+</style>
+</head>
+<body>
+<header><div class="header-inner">
+<div class="school">新北市東海高中</div>
+<h1>學生互動練習平台</h1>
+<p>技藝競賽學科、電阻色碼與電容碼互動練習｜請選擇下方練習系統開始作答。</p>
+</div></header>
+<main>
+<section class="intro">📘 本平台提供課堂、自主學習與技藝競賽複習使用。學生可直接使用電腦、平板或手機開啟，不需安裝程式。</section>
+<section class="grid">
+<article class="card quiz">
+<div class="icon">⚡</div><h2>技藝競賽學科題庫</h2>
+<p>電機與電子群題庫練習，可進行練習、測驗、錯題重練、收藏、倒數計時與作答紀錄。</p>
+<div class="tags"><span class="tag">114 題庫</span><span class="tag">練習模式</span><span class="tag">測驗模式</span><span class="tag">錯題重練</span></div>
+<a class="btn" href="quiz.html">進入技藝競賽題庫 →</a>
+</article>
+<article class="card resistor">
+<div class="icon">🎨</div><h2>電阻色碼與電容碼</h2>
+<p>一次顯示多題的互動練習，包含四環電阻、五環電阻、電容碼、隨機出題、批改與詳解。</p>
+<div class="tags"><span class="tag">四環電阻</span><span class="tag">五環電阻</span><span class="tag">電容碼</span><span class="tag">隨機出題</span></div>
+<a class="btn" href="resistor-capacitor.html">進入色碼練習 →</a>
+</article>
+<article class="card game">
+<div class="icon">🏆</div><h2>色碼闖關遊戲</h2>
+<p>一題一題闖關，答對累積 XP、連續答對有加成，包含四環、五環、電容碼與反向配色。</p>
+<div class="tags"><span class="tag">10 題闖關</span><span class="tag">XP 升級</span><span class="tag">連勝</span><span class="tag">反向配色</span></div>
+<a class="btn" href="color-code-game.html">開始闖關 →</a>
+</article>
+
+<article class="card hackmd">
+<div class="icon">📚</div>
+<h2>微處理機學習資源</h2>
+<p>開啟 HackMD 微處理機教材，查看課程講義、補充資料與延伸學習內容。</p>
+<div class="tags"><span class="tag">HackMD</span><span class="tag">微處理機</span><span class="tag">線上講義</span><span class="tag">補充教材</span></div>
+<a class="btn" href="https://hackmd.io/@7zRJNRycQG2pyk58T9SbFg/HJWrw7Jhzg/https%3A%2F%2Fhackmd.io%2FNQaDABAuTyG8gx9IxIyHIw%2Fpublish?type=book" target="_blank" rel="noopener">進入 HackMD 教材 →</a>
+</article>
+</section>
+<div class="notice">💡 建議將這個首頁網址加入書籤，之後新增更多練習系統時，只要在這個首頁增加入口即可。</div>
+</main>
+<footer>泰山高中｜學生互動練習平台</footer>
+</body>
+</html>

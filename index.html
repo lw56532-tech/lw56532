@@ -23,13 +23,14 @@ main{max-width:1180px;margin:auto;padding:30px 20px 54px}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:330px}
 .icon{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:32px;margin-bottom:18px}
-.quiz .icon{background:#e7f1ff}.resistor .icon{background:#fff0dc}.game .icon{background:#e7f7ef}.hackmd .icon{background:#efe9ff}
+.robotics .icon{background:#e8efff}.quiz .icon{background:#e7f1ff}.resistor .icon{background:#fff0dc}.game .icon{background:#e7f7ef}.hackmd .icon{background:#efe9ff}
 .card h2{margin:0 0 10px;font-size:23px}
 .card p{margin:0 0 16px;color:var(--muted);line-height:1.75}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
 .tag{padding:6px 10px;border-radius:999px;background:#f3f6fa;border:1px solid #e5ebf2;color:#536079;font-size:13px;font-weight:700}
 .btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;color:white;text-decoration:none;font-weight:800;font-size:16px;transition:transform .08s ease,filter .15s ease}
 .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.robotics .btn{background:linear-gradient(180deg,#3976df,#284ba7)}
 .quiz .btn{background:linear-gradient(180deg,var(--blue2),var(--blue))}
 .resistor .btn{background:linear-gradient(180deg,#e58a1e,var(--orange))}
 .game .btn{background:linear-gradient(180deg,#20a46f,var(--green))}.hackmd .btn{background:linear-gradient(180deg,#7557c9,#5a3ba7)}
@@ -53,6 +54,13 @@ footer{text-align:center;color:#7b8799;padding:0 20px 30px;font-size:13px}
 <p>電機與電子群題庫練習，可進行練習、測驗、錯題重練、收藏、倒數計時與作答紀錄。</p>
 <div class="tags"><span class="tag">114 題庫</span><span class="tag">練習模式</span><span class="tag">測驗模式</span><span class="tag">錯題重練</span></div>
 <a class="btn" href="quiz.html">進入技藝競賽題庫 →</a>
+</article>
+<article class="card robotics">
+<div class="icon" aria-hidden="true">🤖</div>
+<h2>工科技藝競賽｜機器人學科題庫</h2>
+<p>115 學年度機器人職種五大章節共 563 題，包含圖片題、選項隨機、錯題重練與 50 題模擬考試。</p>
+<div class="tags"><span class="tag">五章 563 題</span><span class="tag">圖片題</span><span class="tag">練習模式</span><span class="tag">50 題模擬考</span></div>
+<a class="btn" href="首頁新增入口.html">進入機器人學科題庫 →</a>
 </article>
 <article class="card resistor">
 <div class="icon">🎨</div><h2>電阻色碼與電容碼</h2>

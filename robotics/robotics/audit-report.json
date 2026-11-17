@@ -1,0 +1,19 @@
+{
+  "source": "2026-機器人題庫整理全部合一.pdf",
+  "sourcePages": 71,
+  "totalQuestions": 563,
+  "chapterCounts": {
+    "general": 126,
+    "mechanics": 115,
+    "sensors": 115,
+    "motors": 111,
+    "software": 96
+  },
+  "figureQuestions": 100,
+  "sourceCrops": 563,
+  "imageChoices": 13,
+  "answerLettersCrossChecked": 563,
+  "sourcePagesCrossChecked": 563,
+  "imageFilesVerified": 663,
+  "errors": []
+}

@@ -1,0 +1,29 @@
+﻿【市立泰山高中｜五個題庫新增「🏠 返回學校總首頁」】
+
+本工具只修改五個 HTML 檔，不動題目、題庫 JSON、圖片或任何作答資料。
+修改完成後，按鈕會固定在各網站右下角，點擊後直接返回：
+https://lw56532-tech.github.io/lw56532/
+
+【操作步驟】
+1. 解壓縮本 ZIP。
+2. 在 GitHub Desktop 中開啟倉庫 lw56532，點選「Show in Explorer」。
+3. 把解壓縮後的兩個檔案「01_加入返回總首頁.bat」與「install_home_button.ps1」複製到 lw56532 最外層，和 index.html、quiz.html 放在同一層。
+4. 雙擊「01_加入返回總首頁.bat」。
+5. 視窗出現「Complete: 5 modified」表示五個網頁都已加入按鈕。按任意鍵關閉視窗。
+6. 請將剛才複製進 GitHub 資料夾的 .bat 和 .ps1 檔案刪除（這是電腦用更新工具，不需要放上網站）。
+7. 回到 GitHub Desktop，應該只看到 5 個已修改 HTML 檔案。
+8. 左下角 Summary 輸入：「新增返回學校總首頁按鈕」；按「Commit 5 files to main」。
+9. 最後按「Push origin」，然後重新整理題庫網站（可按 Ctrl+F5）。
+
+【修改的五個頁面】
+quiz.html
+robotics/robotics/index.html
+computer-repair/index.html
+resistor-capacitor.html
+color-code-game.html
+
+【注意】
+- GitHub 原本的 index.html 總首頁不需要更換，題目與圖片不必重新上傳。
+- 如果不小心重複執行，工具會偵測到已安裝而跳過，不會重複加入按鈕。
+- 如果找不到五個頁面，工具會停止，不會修改其他位置的檔案。
+- 離開進行中的測驗可能使未儲存的作答進度無法保留；請先交卷或確認已儲存進度。

@@ -1,0 +1,90 @@
+{
+  "counts": {
+    "competition:108": {
+      "questions": 50,
+      "last": 50,
+      "sections": {
+        "歷屆競賽": 50
+      }
+    },
+    "competition:109": {
+      "questions": 50,
+      "last": 50,
+      "sections": {
+        "歷屆競賽": 50
+      }
+    },
+    "competition:110": {
+      "questions": 50,
+      "last": 50,
+      "sections": {
+        "歷屆競賽": 50
+      }
+    },
+    "competition:111": {
+      "questions": 50,
+      "last": 50,
+      "sections": {
+        "歷屆競賽": 50
+      }
+    },
+    "competition:112": {
+      "questions": 25,
+      "last": 25,
+      "sections": {
+        "歷屆競賽": 25
+      }
+    },
+    "competition:113": {
+      "questions": 50,
+      "last": 50,
+      "sections": {
+        "歷屆競賽": 50
+      }
+    },
+    "competition:114": {
+      "questions": 50,
+      "last": 50,
+      "sections": {
+        "歷屆競賽": 50
+      }
+    },
+    "level2:乙級": {
+      "questions": 773,
+      "last": 41,
+      "sections": {
+        "01 電腦、電子及電機機械": 67,
+        "02 作業準備": 93,
+        "03 儀表、軟體及一般工具": 210,
+        "04 工作方法": 191,
+        "05 裝修及控制應用": 171,
+        "06 資訊安全措施": 41
+      }
+    },
+    "level3:丙級": {
+      "questions": 707,
+      "last": 63,
+      "sections": {
+        "01 電腦、電子及電機機械識圖": 49,
+        "02 作業準備": 63,
+        "03 儀表、軟體及一般工具使用": 149,
+        "04 工作方法": 251,
+        "05 裝修及控制應用": 132,
+        "06 資訊安全措施": 63
+      }
+    },
+    "common:共用": {
+      "questions": 119,
+      "last": 40,
+      "sections": {
+        "01 電腦硬體架構": 20,
+        "02 網路概論與應用": 29,
+        "03 作業系統": 10,
+        "04 資訊運算思維": 20,
+        "05 資訊安全": 40
+      }
+    }
+  },
+  "issues": [],
+  "total": 1924
+}

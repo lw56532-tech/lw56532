@@ -1,0 +1,18 @@
+【電腦修護題庫 GitHub Pages 部署說明】
+目標倉庫：https://github.com/lw56532-tech/lw56532
+
+本 ZIP 內有兩個需放在倉庫根目錄的項目：
+1. index.html：新版首頁（六個入口，原五入口不變；新增電腦修護）
+2. computer-repair/：完整電腦修護網站（index.html、questions.js、assets 等）
+
+推薦使用 GitHub Desktop（因網站包含 1924 張圖，GitHub 網頁拖曳上傳有數量限制）：
+1. GitHub Desktop → File → Clone repository → lw56532-tech/lw56532。
+2. 在本地倉庫資料夾中，將此 ZIP 解壓的 index.html 覆蓋倉庫根目錄原有 index.html。
+3. 將 computer-repair 整個資料夾複製到倉庫根目錄。
+4. GitHub Desktop 填寫 Summary「新增電腦修護學科題庫」，按 Commit to main。
+5. 按 Push origin，稍候確認 GitHub Pages。
+6. 首頁：https://lw56532-tech.github.io/lw56532/
+7. 新題庫：https://lw56532-tech.github.io/lw56532/computer-repair/
+
+請不要刪掉原本的 quiz.html、robotics、resistor-capacitor.html、color-code-game.html 等檔案。
+本包尚未自動上傳至 GitHub，必須完成推送才會公開。
